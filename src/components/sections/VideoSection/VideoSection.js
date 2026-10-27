@@ -1,0 +1,68 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import styles from "./VideoSection.module.css";
+import { LuVolume2, LuVolumeX } from "react-icons/lu";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
+export default function VideoSection() {
+  const videoRef = useRef(null);
+  const [muted, setMuted] = useState(true);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section className={styles.section}>
+      <div className={styles.sticky}>
+        <div className={styles.content}>
+          <div className={styles.videoCard}>
+            <video
+              ref={videoRef}
+              muted={muted}
+              loop
+              playsInline
+              preload="none"
+              onPlay={(e) => e.currentTarget.classList.add(styles.visible)}
+            >
+              <source src="/website-video.webm" type="video/webm" />
+            </video>
+
+            <button
+              className={styles.muteBtn}
+              onClick={() => setMuted(!muted)}
+              aria-label={muted ? "Unmute video" : "Mute video"}
+              type="button"
+            >
+              {muted ? <LuVolumeX size={18} /> : <LuVolume2 size={18} />}
+            </button>
+          </div>
+
+          <Link href="/contact#contact-form" className={styles.cta}>
+            <div className={styles.arrow}>
+              <ArrowRight size={16} />
+            </div>
+            <span className={styles.ctaLabel}>Start Your Project</span>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}

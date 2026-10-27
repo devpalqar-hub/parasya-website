@@ -1,0 +1,1133 @@
+.root * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.root {
+  font-family: var(--font-inter), sans-serif;
+  color: #ffffff;
+  background: #000000;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 60px);
+}
+
+:global(.reveal) {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 0.8, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 0.8, 0.36, 1);
+}
+
+:global(.reveal.visible) {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+:global(.reveal-delay-1) {
+  transition-delay: 0.1s;
+}
+
+:global(.reveal-delay-2) {
+  transition-delay: 0.2s;
+}
+
+:global(.reveal-delay-3) {
+  transition-delay: 0.3s;
+}
+
+:global(.reveal-delay-4) {
+  transition-delay: 0.4s;
+}
+
+:global(.reveal-delay-5) {
+  transition-delay: 0.5s;
+}
+
+.marginTop16 {
+  margin-top: 16px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #dc3545;
+  margin-bottom: 24px;
+}
+
+.eyebrow::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: #dc3545;
+}
+
+.heading {
+  font-family: var(--font-raleway), sans-serif;
+  font-size: clamp(42px, 8vw, 86px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.heading em {
+  font-style: italic;
+  color: #dc3545;
+  font-weight: 400;
+}
+
+.subheading {
+  font-family: var(--font-inter), sans-serif;
+  font-size: clamp(16px, 2vw, 18px);
+  color: #aaaaaa;
+  line-height: 1.6;
+  max-width: 680px;
+  font-weight: 400;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Hero Section */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  background: #000000;
+  padding: clamp(140px, 20vw, 220px) 0 clamp(80px, 12vw, 140px);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(220, 53, 69, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(220, 53, 69, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.heroGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 2;
+}
+
+.hero .heading {
+  max-width: 1000px;
+  margin-bottom: 32px;
+}
+
+.hero .subheading {
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 48px;
+}
+
+.heroCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  background: #dc3545;
+  color: #fff;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 20px 44px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(220, 53, 69, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.heroCta:hover {
+  background: #ff1f1f;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(220, 53, 69, 0.4);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Problem Solution Section */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.ps {
+  padding: clamp(80px, 12vw, 160px) 0;
+  background: #000000;
+}
+
+.psHeader {
+  margin-bottom: 72px;
+}
+
+.psGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.psCol {
+  padding: 48px;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: border-color 0.3s ease;
+}
+
+.psCol:hover {
+  border-color: rgba(220, 53, 69, 0.3);
+}
+
+.psColTitle {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.psCol:first-child .psColTitle {
+  color: #666666;
+}
+
+.psCol:last-child .psColTitle {
+  color: #dc3545;
+}
+
+.psList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.psList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 15px;
+  color: #aaaaaa;
+  line-height: 1.6;
+}
+
+.psList li::before {
+  content: "-";
+  flex-shrink: 0;
+  color: #666666;
+}
+
+.psCol:last-child .psList li::before {
+  content: ">";
+  color: #dc3545;
+}
+
+.psCol:last-child .psList li {
+  color: #ffffff;
+}
+
+.psDescription {
+  padding: 48px;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 16px;
+  line-height: 1.8;
+  color: #aaaaaa;
+  border-radius: 12px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Services / What's Included Section */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.services {
+  padding: clamp(80px, 12vw, 160px) 0;
+  background: #000000;
+}
+
+.servicesHeader {
+  margin-bottom: 80px;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.serviceCard {
+  background: #111111;
+  padding: 48px 40px;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+}
+
+.serviceCard:hover {
+  background: #222222;
+  transform: translateY(-8px);
+  border-color: #dc3545;
+}
+
+.serviceNum {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #dc3545;
+  margin-bottom: 24px;
+}
+
+.serviceTitle {
+  font-family: var(--font-raleway), sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.serviceDesc {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  color: #aaaaaa;
+  line-height: 1.7;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Image Section */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.imageSection {
+  padding: clamp(80px, 12vw, 160px) 0;
+  background: #050505;
+  position: relative;
+  overflow: hidden;
+}
+
+.imageSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 16% 24%, rgba(220, 53, 69, 0.16) 0%, transparent 42%),
+    radial-gradient(circle at 84% 76%, rgba(255, 255, 255, 0.05) 0%, transparent 34%);
+  pointer-events: none;
+}
+
+.imageSectionGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.imageSectionContent {
+  max-width: 540px;
+}
+
+.imageSectionTitle {
+  font-family: var(--font-raleway), sans-serif;
+  font-size: clamp(34px, 5vw, 58px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.imageSectionDescription {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 16px;
+  color: #b8b8b8;
+  line-height: 1.8;
+}
+
+.imageFigure {
+  margin: 0;
+}
+
+.imageFrame {
+  position: relative;
+  min-height: clamp(320px, 42vw, 560px);
+  overflow: hidden;
+  border-radius: 32px;
+  background: #101010;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+}
+
+.imageFrame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.28) 100%);
+  pointer-events: none;
+}
+
+.imageMedia {
+  object-fit: cover;
+}
+
+.imageCaption {
+  margin-top: 16px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7d7d7d;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Why Choose Palqar Section */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.whyChoose {
+  padding: clamp(80px, 12vw, 160px) 0;
+  background: #050505;
+}
+
+.whyChooseHeader {
+  margin-bottom: 80px;
+}
+
+.whyChooseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.whyChooseCard {
+  background: #111111;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.whyChooseCard:hover {
+  background: #1a1a1a;
+  border-color: rgba(220, 53, 69, 0.3);
+  transform: translateY(-4px);
+}
+
+.whyChooseTitle {
+  font-family: var(--font-raleway), sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.whyChooseDesc {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  color: #aaaaaa;
+  line-height: 1.7;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Process Section */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.process {
+  padding: clamp(80px, 12vw, 160px) 0;
+  background: #050505;
+  position: relative;
+  overflow: hidden;
+}
+
+.processHeader {
+  margin-bottom: 80px;
+}
+
+.processSteps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+}
+
+.processStep {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 32px;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.processStep:hover {
+  background: #1a1a1a;
+  border-color: rgba(220, 53, 69, 0.3);
+}
+
+.stepDot {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #dc3545;
+  margin-bottom: 16px;
+}
+
+.stepLabel {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  color: #aaaaaa;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Tech Stack Section */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.techStack {
+  padding: clamp(80px, 12vw, 160px) 0;
+  background: #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+.techStack::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.techStackGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.techStackContent {
+  max-width: 600px;
+}
+
+.techStackHeader {
+  margin-bottom: 32px;
+}
+
+.techStackHeader .heading {
+  margin-bottom: 16px;
+}
+
+.techStackDescription {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 16px;
+  color: #aaaaaa;
+  line-height: 1.8;
+  margin-bottom: 48px;
+}
+
+.techStackIcons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.techCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 18px;
+  border-radius: 18px;
+
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+
+  backdrop-filter: blur(10px);
+
+  transition: all .3s ease;
+}
+
+.techCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(220,53,69,.5);
+
+  box-shadow:
+    0 0 30px rgba(220,53,69,.15);
+}
+
+.techCardIcon {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(220,53,69,.08);
+}
+
+.techIcon {
+  font-size: 28px;
+  color: #dc3545;
+}
+
+.techCardContent h4 {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.techCardContent p {
+  color: #999;
+  font-size: 13px;
+}
+
+.techStackIllustration {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.techStackImage {
+    position: absolute;
+    inset: 0;
+    top: 0;
+    left: 30%;
+  width: 140%;
+  height: 140%;
+  object-fit: contain;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Results Section */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.results {
+  padding: clamp(80px, 12vw, 160px) 0;
+  background: #000000;
+}
+
+.resultsHeader {
+  margin-bottom: 80px;
+}
+
+.resultsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  list-style: none;
+}
+
+.resultPill {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 32px;
+  background: #111111;
+  border: 1px solid rgba(220, 53, 69, 0.2);
+  border-radius: 50px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.resultPill:hover {
+  background: rgba(220, 53, 69, 0.05);
+  border-color: #dc3545;
+  transform: translateY(-4px);
+}
+
+.resultCheck {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 50%;
+  background: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+}
+
+.resultCheck svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* FAQ Section */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.faq {
+  padding: clamp(80px, 12vw, 160px) 0;
+  background: #050505;
+}
+
+.faqHeader {
+  margin-bottom: 72px;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faqItem {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.faqItem[data-open="true"] {
+  border-color: #dc3545;
+}
+
+.faqQuestion {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 32px 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-raleway), sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.faqQuestion:hover {
+  color: #dc3545;
+}
+
+.faqIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 24px;
+  color: #666666;
+  transition: all 0.3s ease;
+}
+
+.faqItem[data-open="true"] .faqIcon {
+  background: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
+}
+
+.faqAnswer {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faqItem[data-open="true"] .faqAnswer {
+  max-height: 500px;
+}
+
+.faqAnswer p {
+  padding: 0 40px 32px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 16px;
+  color: #aaaaaa;
+  line-height: 1.7;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Final CTA Section */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.finalCta {
+  padding: clamp(80px, 12vw, 160px) 0;
+  background: #111111;
+  position: relative;
+  overflow: hidden;
+}
+
+.finalCta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(220, 53, 69, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 0% 100%, rgba(220, 53, 69, 0.04) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.finalCtaContent {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.finalCtaTitle {
+  font-family: var(--font-raleway), sans-serif;
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.finalCtaTitle em {
+  color: #dc3545;
+  font-style: italic;
+}
+
+.finalCtaSubtitle {
+  font-family: var(--font-inter), sans-serif;
+  font-size: clamp(16px, 2vw, 18px);
+  color: #aaaaaa;
+  line-height: 1.6;
+  margin-bottom: 48px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.finalCtaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  background: #dc3545;
+  color: #fff;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 20px 44px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(220, 53, 69, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.finalCtaButton:hover {
+  background: #ff1f1f;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(220, 53, 69, 0.4);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Responsive Design */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .imageSectionGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .whyChooseGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .processSteps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .techStackGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .techStackIllustration {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .eyebrow {
+    font-size: 11px;
+  }
+
+  .heading {
+    font-size: clamp(28px, 6vw, 48px);
+  }
+
+  .subheading {
+    font-size: 16px;
+  }
+
+  .hero {
+    padding: 160px 0 100px;
+  }
+
+  .hero .heading {
+    margin-bottom: 24px;
+  }
+
+  .hero .subheading {
+    margin-bottom: 32px;
+  }
+
+  .heroCta {
+    padding: 16px 32px;
+    font-size: 12px;
+  }
+
+  .psGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .psCol {
+    padding: 32px;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .whyChooseGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .whyChooseCard {
+    padding: 32px;
+  }
+
+  .processSteps {
+    grid-template-columns: 1fr;
+  }
+
+  .processStep {
+    padding: 24px;
+  }
+
+  .techStackContent {
+    max-width: 100%;
+  }
+
+    .techCard {
+    padding: 14px;
+    gap: 12px;
+    border-radius: 14px;
+  }
+
+  .techCardIcon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+  }
+
+  .techIcon {
+    font-size: 22px;
+  }
+
+  .techCardContent h4 {
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+
+  .techCardContent p {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .techStackDescription {
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+
+  .techStackIllustration {
+    height: 250px;
+  }
+
+  .resultsList {
+    grid-template-columns: 1fr;
+  }
+
+  .resultPill {
+    padding: 20px 24px;
+    font-size: 14px;
+  }
+
+  .faqQuestion {
+    padding: 32px 24px;
+  }
+
+  .faqAnswer p {
+    padding: 0 24px 32px;
+    font-size: 14px;
+  }
+
+  .finalCtaTitle {
+    font-size: clamp(24px, 5vw, 42px);
+    margin-bottom: 16px;
+  }
+
+  .finalCtaSubtitle {
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+
+  .finalCtaButton {
+    padding: 16px 32px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .heading {
+    font-size: clamp(24px, 5vw, 36px);
+  }
+
+  .hero {
+    padding: 120px 0 60px;
+  }
+
+  .psCol {
+    padding: 24px;
+  }
+
+  .serviceCard {
+    padding: 24px;
+  }
+
+  .imageFrame {
+    min-height: 240px;
+  }
+
+  .imageSectionGrid {
+    gap: 24px;
+  }
+
+  .whyChooseCard {
+    padding: 24px;
+  }
+
+  .techStackHeader .heading {
+    font-size: clamp(20px, 5vw, 28px);
+  }
+
+  .techStackIcons {
+    gap: 10px;
+  }
+
+  .techCard {
+    padding: 12px;
+    gap: 10px;
+    border-radius: 12px;
+  }
+
+  .techCardIcon {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .techIcon {
+    font-size: 18px;
+  }
+
+  .techCardContent h4 {
+    font-size: 13px;
+    line-height: 1.2;
+    margin-bottom: 2px;
+  }
+
+  .techCardContent p {
+    font-size: 10px;
+    line-height: 1.3;
+  }
+
+  .techStackIllustration {
+    display: none;
+  }
+
+  .finalCtaTitle {
+    font-size: 28px;
+  }
+}
+@media (max-width: 360px) {
+  .techCard {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .techCardIcon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .techIcon {
+    font-size: 16px;
+  }
+
+  .techCardContent h4 {
+    font-size: 12px;
+  }
+
+  .techCardContent p {
+    font-size: 9px;
+  }
+}

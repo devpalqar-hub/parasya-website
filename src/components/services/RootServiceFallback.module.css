@@ -1,0 +1,220 @@
+/* Black / white / red theme shared with the published service pages and
+   the ERP page (see ErpServicePage.module.css and the FAQ/CTA sections). */
+.page {
+  background: #000;
+  color: #fff;
+  font-family: var(--font-raleway);
+}
+
+.hero {
+  padding: 9rem 1.5rem 4rem;
+  border-bottom: 1px solid #262626;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ff5a4f;
+}
+
+.title {
+  margin: 0;
+  max-width: 16ch;
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+
+.description {
+  max-width: 68ch;
+  margin: 1.5rem 0 0;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #d6d6d6;
+}
+
+.heroActions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.primaryAction,
+.secondaryAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+}
+
+.primaryAction {
+  background: #e0281d;
+  color: #fff;
+}
+
+.primaryAction:hover {
+  background: #c9211a;
+}
+
+.secondaryAction {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.primaryAction:hover,
+.secondaryAction:hover {
+  transform: translateY(-1px);
+}
+
+.primaryAction:focus-visible,
+.secondaryAction:focus-visible,
+.exploreLink:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.sections {
+  padding: 4rem 1.5rem 5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 2rem;
+  border-radius: 28px;
+  background: #111;
+  border: 1px solid #262626;
+}
+
+.cardTitle {
+  margin: 0 0 0.85rem;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.list,
+.faqList {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.list li,
+.faqList li {
+  margin-bottom: 0.75rem;
+  line-height: 1.65;
+  color: #c8c8c8;
+}
+
+.list li::marker,
+.faqList li::marker {
+  color: #ff5a4f;
+}
+
+.highlightGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.highlightCard {
+  padding: 1.5rem;
+  border-radius: 24px;
+  background: #111;
+  border: 1px solid #262626;
+}
+
+.highlightCard h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+.highlightCard p {
+  margin: 0;
+  line-height: 1.65;
+  color: #bdbdbd;
+}
+
+.exploreLinks {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.exploreLink {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8rem 1.25rem;
+  border-radius: 999px;
+  text-decoration: none;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.exploreLink:hover {
+  background: #e0281d;
+  border-color: #e0281d;
+}
+
+.sectionBlock {
+  margin-top: 3rem;
+}
+
+.sectionHeading {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.faqItemTitle {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .grid,
+  .highlightGrid,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 7rem;
+  }
+}

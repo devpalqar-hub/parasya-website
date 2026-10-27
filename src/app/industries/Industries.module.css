@@ -1,0 +1,208 @@
+/* ===============================
+   INDUSTRIES PAGE
+================================= */
+
+.industriesPage {
+  background: #ffffff;
+  color: #000000;
+  min-height: 100vh;
+  font-family: var(--font-raleway);
+  padding-bottom: 100px;
+}
+
+/* ===============================
+   HERO SECTION
+================================= */
+
+.heroSection {
+  padding: 290px 0 190px;
+  text-align: left;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.heroHeading {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: var(--font-raleway);
+  font-weight: 800;
+  font-size: 100px;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: #000000;
+  max-width: 1000px;
+}
+
+.heroHeading span {
+  display: block;
+}
+
+/* ===============================
+   LIST SECTION
+================================= */
+
+.sectionContainer {
+  display: flex;
+  gap: 100px;
+}
+
+.listSection {
+  padding: 40px 0 100px;
+}
+
+.listItem {
+  display: flex;
+  /* align-items: flex-start; */
+  /* justify-content: space-between; */
+  padding: 80px 0;
+  border-top: 1px solid #eaeaea;
+  gap: 250px;
+}
+
+.listItem:last-child {
+  border-bottom: 1px solid #eaeaea;
+}
+
+.itemLeft {
+  flex: 0 0 500px;
+  /* Fixed width for text area as requested previously */
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.itemTextContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.itemNumber {
+  font-size: 68px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1;
+}
+
+.itemTitle {
+  font-size: 68px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.itemDescription {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #4b5563;
+  /* padding removed to fix broken layout with large text */
+}
+
+.itemRight {
+  flex: 1;
+  width: 100%;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.imageWrapper img {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.imageWrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 1024px) {
+  .heroHeading {
+    font-size: 64px;
+  }
+
+  .itemTitle,
+  .itemNumber {
+    font-size: 36px;
+  }
+
+  .itemDescription {
+    font-size: 16px;
+  }
+
+  .listItem {
+    gap: 40px;
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 120px 0 60px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .heroHeading {
+    font-size: clamp(40px, 8vw, 56px);
+  }
+
+  .listItem {
+    flex-direction: column;
+    gap: 40px;
+    padding: 50px 0;
+  }
+
+  .itemLeft {
+    flex: none;
+    width: 100%;
+    gap: 16px;
+    max-width: 100%;
+  }
+
+  .itemNumber,
+  .itemTitle {
+    font-size: 32px;
+  }
+
+  .itemDescription {
+    margin-top: 5px;
+  }
+
+  .itemRight {
+    max-width: 100%;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroHeading {
+    font-size: clamp(32px, 10vw, 40px);
+  }
+
+  .itemNumber,
+  .itemTitle {
+    font-size: 28px;
+  }
+}

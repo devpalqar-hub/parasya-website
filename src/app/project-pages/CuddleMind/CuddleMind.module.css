@@ -1,0 +1,1487 @@
+/* =========================================================
+   CuddleMind project page — dark theme (matches Zodo / CleanMaria / Doulas / MomsMilk)
+   Accent: #169DD2 (sky). Secondary: #FCB03D (sun), #4FA86E (leaf)
+   Breakpoints: default > 1024 > 768 > 480 > 360 > 300
+   ========================================================= */
+
+/* ---------- Base ---------- */
+
+.page {
+    --accent: #169dd2;
+    --sun: #fcb03d;
+    --leaf: #4fa86e;
+    --card: #0c0c0c;
+    --card-alt: #070707;
+    --border: 1px solid rgba(255, 255, 255, 0.08);
+    --border-soft: 1px solid rgba(255, 255, 255, 0.05);
+    --muted: #8a8a8a;
+    --soft: #9aa4ab;
+
+    background: #000;
+    color: #fff;
+    font-family: var(--font-inter), "Inter", system-ui, -apple-system,
+        "Segoe UI", sans-serif;
+    overflow-x: clip;
+}
+
+.page *,
+.page *::before,
+.page *::after {
+    box-sizing: border-box;
+}
+
+.page :where(h1, h2, h3, h4, p, ul, ol, figure) {
+    margin: 0;
+    padding: 0;
+}
+
+.page :where(ul, ol) {
+    list-style: none;
+}
+
+.page a:focus-visible,
+.page button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 160px 20px;
+}
+
+.bgPaper {
+    background: #000;
+}
+
+.bgPale {
+    background: #050505;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bgLeaf {
+    background: radial-gradient(circle at top, #0c1f14 0%, #000 70%);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sectionHead {
+    max-width: 720px;
+    margin-bottom: 70px;
+}
+
+.eyebrow {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.h2 {
+    font-size: clamp(30px, 4.4vw, 48px);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.5px;
+    color: #fff;
+}
+
+.lead {
+    margin-top: 16px;
+    max-width: 60ch;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--muted);
+}
+
+/* ---------- Tape (shown only inside the brand "Tape" rule card) ---------- */
+
+.tape {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    width: 84px;
+    height: 22px;
+    background: rgba(252, 176, 61, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transform: translateX(-50%) rotate(-3deg);
+    pointer-events: none;
+}
+
+/* ---------- Buttons ---------- */
+
+.btnDark,
+.btnLight {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 52px;
+    padding: 0 24px;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btnDark {
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(22, 157, 210, 0.45);
+}
+
+.btnDark:hover {
+    background: #22addf;
+    box-shadow: 0 0 28px rgba(22, 157, 210, 0.65);
+}
+
+.btnLight {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.btnLight:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ---------- Image frames ---------- */
+
+.shot {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    overflow: hidden;
+}
+
+.shotHint {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #555;
+    word-break: break-all;
+}
+
+.shotImg {
+    object-fit: cover;
+    object-position: top center;
+}
+
+.phone {
+    width: 100%;
+    min-width: 0;
+    background: #000;
+    border: 6px solid #1a1a1a;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+}
+
+.phoneScreen {
+    position: relative;
+    aspect-ratio: 9 / 19;
+    border-radius: 26px;
+    overflow: hidden;
+}
+
+.browser {
+    width: 100%;
+    min-width: 0;
+    background: var(--card);
+    border: var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+}
+
+.browserBar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 32px;
+    padding: 0 14px;
+    background: #111;
+    border-bottom: var(--border-soft);
+}
+
+.browserBar i {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #2a2a2a;
+}
+
+.browserScreen {
+    position: relative;
+    aspect-ratio: 16 / 10;
+}
+
+.figure {
+    min-width: 0;
+}
+
+.caption {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 22px;
+}
+
+.caption strong {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.caption span {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--muted);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+    padding: 140px 20px 100px;
+    background: radial-gradient(circle at top, #07161c 0%, #000 70%);
+}
+
+.heroGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 80px;
+    align-items: center;
+}
+
+.heroGrid>* {
+    min-width: 0;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 18px;
+    margin-bottom: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--accent);
+}
+
+.heroTitle {
+    font-size: clamp(40px, 5.8vw, 72px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    color: #fff;
+}
+
+.mark {
+    display: block;
+    margin-top: 6px;
+    color: var(--accent);
+}
+
+.heroLead {
+    max-width: 50ch;
+    margin-top: 26px;
+    font-size: 19px;
+    line-height: 1.65;
+    color: #ffffff99;
+}
+
+.heroChips,
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.heroChips {
+    margin-top: 28px;
+}
+
+.heroChips li,
+.chips li {
+    padding: 8px 16px;
+    background: var(--card-alt);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    font-size: 13px;
+    color: #ffffffcc;
+}
+
+.heroActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 40px;
+}
+
+.heroVisual {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    margin-left: auto;
+}
+
+.paper {
+    position: relative;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.04),
+            rgba(0, 0, 0, 0.6));
+    border: var(--border);
+    border-radius: 28px;
+    padding: 30px 30px 0;
+    overflow: hidden;
+}
+
+.paper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 10px;
+    background: radial-gradient(circle, rgba(22, 157, 210, 0.45), transparent 70%);
+    filter: blur(40px);
+    pointer-events: none;
+}
+
+.heroPhone {
+    margin-bottom: -40px;
+}
+
+.sticker {
+    position: absolute;
+    z-index: 3;
+    padding: 10px 16px;
+    background: #0c0c0c;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+    animation: stickerPop 0.55s cubic-bezier(0.3, 1.5, 0.5, 1) both;
+}
+
+.sticker::before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.stickerSky {
+    top: 9%;
+    left: -12%;
+    animation-delay: 0.3s;
+}
+
+.stickerMint {
+    top: 38%;
+    right: -9%;
+    animation-delay: 0.45s;
+}
+
+.stickerMint::before {
+    background: var(--leaf);
+}
+
+.stickerSun {
+    bottom: 12%;
+    left: -8%;
+    animation-delay: 0.6s;
+}
+
+.stickerSun::before {
+    background: var(--sun);
+}
+
+@keyframes stickerPop {
+    from {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.wave {
+    background: #000;
+    line-height: 0;
+}
+
+.wave svg {
+    display: block;
+    width: 100%;
+    height: 90px;
+}
+
+/* ---------- About ---------- */
+
+.aboutCard {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 56px;
+    background: var(--card);
+    border: var(--border);
+    border-radius: 28px;
+}
+
+.aboutIcon {
+    flex-shrink: 0;
+    width: 128px;
+    height: 128px;
+}
+
+.aboutBody {
+    min-width: 0;
+}
+
+.aboutText {
+    max-width: 62ch;
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+.notes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.notes li {
+    position: relative;
+    padding-left: 22px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--soft);
+}
+
+.notes strong {
+    color: #fff;
+}
+
+.notes li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+/* ---------- Mood check-in ---------- */
+
+.moodGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 80px;
+    align-items: center;
+}
+
+.moodGrid>* {
+    min-width: 0;
+}
+
+.hint {
+    display: inline-block;
+    margin-top: 32px;
+    padding: 10px 20px;
+    border: 1px solid rgba(252, 176, 61, 0.45);
+    border-radius: 20px;
+    background: rgba(252, 176, 61, 0.1);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--sun);
+}
+
+.moodVisual {
+    display: flex;
+    justify-content: center;
+}
+
+.live {
+    width: 100%;
+    max-width: 360px;
+    padding: 22px 20px 24px;
+    background: var(--card);
+    border: var(--border);
+    border-radius: 32px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 80px rgba(22, 157, 210, 0.12);
+}
+
+.liveTop {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.liveHi {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.liveSub {
+    margin-top: 2px;
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.liveBell {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border: var(--border);
+    border-radius: 10px;
+    color: var(--soft);
+}
+
+.liveLabel {
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.moods {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 6px;
+}
+
+.mood {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 0;
+    padding: 10px 2px;
+    background: #111;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    color: var(--soft);
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.mood:hover {
+    background: #181818;
+}
+
+.moodOn,
+.moodOn:hover {
+    background: rgba(22, 157, 210, 0.15);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+.moodEmoji {
+    font-size: 22px;
+    line-height: 1;
+}
+
+.liveStatus {
+    min-height: 40px;
+    margin: 14px 0 12px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+.liveActions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.actionCard {
+    min-width: 0;
+    padding: 14px 12px;
+    border: var(--border-soft);
+    border-radius: 16px;
+}
+
+.actionBlue {
+    background: rgba(22, 157, 210, 0.12);
+}
+
+.actionPeach {
+    background: rgba(252, 176, 61, 0.12);
+}
+
+.actionIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 10px;
+    background: #000;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.actionTitle {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #fff;
+}
+
+.actionDesc {
+    margin-top: 4px;
+    font-size: 11px;
+    line-height: 1.45;
+    color: var(--muted);
+}
+
+/* ---------- Steps ---------- */
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.step {
+    min-width: 0;
+    padding: 28px;
+    background: var(--card);
+    border: var(--border-soft);
+    border-radius: 16px;
+    transition: border-color 0.3s;
+}
+
+.step:hover {
+    border-color: var(--accent);
+}
+
+.stepTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stepNum {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,
+            rgba(22, 157, 210, 0.25) 0%,
+            rgba(79, 168, 110, 0.25) 100%);
+    border: 1px solid #ffffff1a;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.stepIcon {
+    display: inline-flex;
+    color: var(--accent);
+}
+
+.stepTitle {
+    margin-top: 24px;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #fff;
+}
+
+.stepDesc {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+/* ---------- Features ---------- */
+
+.featureGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.feature {
+    min-width: 0;
+    padding: 32px 28px;
+    background: #ffffff0d;
+    border: 1px solid #ffffff1a;
+    border-radius: 24px;
+    transition: border-color 0.3s;
+}
+
+.feature:hover {
+    border-color: var(--accent);
+}
+
+.featureIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: #020000;
+    color: var(--accent);
+}
+
+.feature:nth-child(3n + 2) .featureIcon {
+    color: var(--sun);
+}
+
+.feature:nth-child(3n) .featureIcon {
+    color: var(--leaf);
+}
+
+.featureTitle {
+    margin-top: 22px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.featureDesc {
+    margin-top: 8px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+/* ---------- App screens ---------- */
+
+.appGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 40px 28px;
+}
+
+/* ---------- Landing page ---------- */
+
+.webRow {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 48px 36px;
+    margin-top: 48px;
+}
+
+.buildGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 64px;
+    margin-top: 80px;
+}
+
+.buildItem {
+    min-width: 0;
+    padding: 28px 0 32px;
+    border-top: var(--border);
+}
+
+.buildTitle {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.buildDesc {
+    max-width: 48ch;
+    margin-top: 8px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+.chips {
+    margin-top: 12px;
+}
+
+/* ---------- Brand ---------- */
+
+.swatches {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.swatch {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-width: 0;
+    min-height: 130px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+}
+
+.swatch strong {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.swatch code {
+    margin-top: 4px;
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+    font-size: 14px;
+}
+
+.brandBottom {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: 32px;
+    margin-top: 56px;
+    align-items: start;
+}
+
+.typeCard {
+    min-width: 0;
+    padding: 36px;
+    background: var(--card);
+    border: var(--border-soft);
+    border-radius: 16px;
+}
+
+.typeLabel {
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #6f6f6f;
+}
+
+.typeAa {
+    margin-top: 12px;
+    font-size: 96px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -4px;
+    color: var(--accent);
+}
+
+.typeSample {
+    margin-top: 16px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    color: #fff;
+}
+
+.typeName {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: var(--border-soft);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+.rules {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.rule {
+    position: relative;
+    min-width: 0;
+    padding: 24px 20px;
+    background: var(--card);
+    border: var(--border-soft);
+    border-radius: 16px;
+}
+
+/* these four demonstrate the CuddleMind landing-page brand rules */
+
+.ruleOutline {
+    border: 3px solid #fff;
+}
+
+.ruleShadow {
+    box-shadow: 6px 6px 0 var(--accent);
+}
+
+.ruleTilt {
+    transform: rotate(-2.5deg);
+}
+
+.ruleTape {
+    padding-top: 32px;
+}
+
+.ruleTitle {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.ruleDesc {
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--muted);
+}
+
+/* ---------- CTA ---------- */
+
+.ctaSection {
+    padding: 140px 20px;
+    background: #000;
+}
+
+.ctaCard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px;
+    background: #11708f;
+    border-radius: 40px;
+    text-align: center;
+}
+
+.ctaEyebrow {
+    display: block;
+    margin-bottom: 14px;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1.25px;
+    color: #d1f0f5;
+}
+
+.ctaTitle {
+    max-width: 16ch;
+    margin: 0 auto;
+    font-size: clamp(32px, 4.8vw, 56px);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.5px;
+    color: #fff;
+}
+
+.ctaLead {
+    max-width: 44ch;
+    margin: 20px auto 0;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #e3f6fa;
+}
+
+.ctaActions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 36px;
+}
+
+.ctaCard .btnDark {
+    background: #000;
+    border-color: #000;
+    box-shadow: none;
+}
+
+.ctaCard .btnDark:hover {
+    background: #111;
+}
+
+.ctaCard .btnLight {
+    background: #fff;
+    border-color: #fff;
+    color: #000;
+}
+
+.ctaCard .btnLight:hover {
+    background: #e5e5e5;
+    border-color: #e5e5e5;
+    color: #000;
+}
+
+.ctaCard a:focus-visible {
+    outline-color: #fff;
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .sticker {
+        animation: none;
+    }
+
+    .btnDark,
+    .btnLight,
+    .mood,
+    .step,
+    .feature {
+        transition: none;
+    }
+}
+
+/* =========================================================
+   1024px
+   ========================================================= */
+
+@media (max-width: 1024px) {
+    .section {
+        padding: 120px 20px;
+    }
+
+    .hero {
+        padding: 120px 20px 80px;
+    }
+
+    .heroGrid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 72px;
+    }
+
+    .heroVisual {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .aboutCard {
+        gap: 32px;
+        padding: 40px;
+    }
+
+    .moodGrid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 56px;
+    }
+
+    .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .featureGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .appGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 48px 32px;
+    }
+
+    .appGrid .figure {
+        max-width: 300px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .brandBottom {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .ctaSection {
+        padding: 100px 20px;
+    }
+
+    .ctaCard {
+        padding: 60px;
+    }
+}
+
+/* =========================================================
+   768px
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .section {
+        padding: 100px 20px;
+    }
+
+    .hero {
+        padding: 100px 20px 64px;
+    }
+
+    .heroLead {
+        font-size: 18px;
+    }
+
+    .sectionHead {
+        margin-bottom: 40px;
+    }
+
+    .lead,
+    .aboutText {
+        font-size: 17px;
+    }
+
+    .wave svg {
+        height: 64px;
+    }
+
+    .aboutCard {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 32px 28px;
+    }
+
+    .aboutIcon {
+        width: 96px;
+        height: 96px;
+    }
+
+    .webRow {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 40px;
+    }
+
+    .buildGrid {
+        grid-template-columns: minmax(0, 1fr);
+        margin-top: 56px;
+    }
+
+    .swatches {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .typeCard {
+        padding: 28px;
+    }
+
+    .ctaSection {
+        padding: 80px 20px;
+    }
+
+    .ctaCard {
+        padding: 40px 28px;
+        border-radius: 28px;
+    }
+}
+
+/* =========================================================
+   480px
+   ========================================================= */
+
+@media (max-width: 480px) {
+    .section {
+        padding: 80px 16px;
+    }
+
+    .hero {
+        padding: 80px 16px 56px;
+    }
+
+    .heroActions {
+        flex-direction: column;
+    }
+
+    .heroActions>* {
+        width: 100%;
+    }
+
+    .heroChips li,
+    .chips li {
+        padding: 7px 14px;
+        font-size: 12px;
+    }
+
+    .heroVisual {
+        max-width: 320px;
+    }
+
+    .paper {
+        padding: 22px 22px 0;
+        border-radius: 22px;
+    }
+
+    .sticker {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .stickerSky {
+        left: -8px;
+    }
+
+    .stickerMint {
+        right: -8px;
+    }
+
+    .stickerSun {
+        left: -6px;
+    }
+
+    .wave svg {
+        height: 48px;
+    }
+
+    .aboutCard {
+        padding: 28px 22px;
+        border-radius: 20px;
+    }
+
+    .live {
+        padding: 18px 14px 20px;
+        border-radius: 26px;
+    }
+
+    .steps,
+    .featureGrid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .step {
+        padding: 24px 22px;
+    }
+
+    .feature {
+        padding: 26px 22px;
+    }
+
+    .appGrid {
+        gap: 36px 14px;
+    }
+
+    .phone {
+        border-width: 4px;
+        border-radius: 24px;
+    }
+
+    .phoneScreen {
+        border-radius: 20px;
+    }
+
+    .caption strong {
+        font-size: 15px;
+    }
+
+    .caption span {
+        font-size: 13px;
+    }
+
+    .swatches {
+        gap: 12px;
+    }
+
+    .swatch {
+        min-height: 110px;
+        padding: 16px;
+    }
+
+    .rules {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .typeAa {
+        font-size: 72px;
+    }
+
+    .typeSample {
+        font-size: 20px;
+    }
+
+    .ctaSection {
+        padding: 64px 16px;
+    }
+
+    .ctaCard {
+        padding: 36px 20px;
+    }
+
+    .ctaActions {
+        flex-direction: column;
+    }
+
+    .ctaActions>* {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+    .section {
+        padding: 64px 14px;
+    }
+
+    .hero {
+        padding: 64px 14px 48px;
+    }
+
+    .ctaSection {
+        padding: 56px 14px;
+    }
+
+    .lead,
+    .aboutText,
+    .heroLead,
+    .ctaLead {
+        font-size: 16px;
+    }
+
+    .hint {
+        font-size: 13px;
+        padding: 9px 16px;
+    }
+
+    .mood {
+        font-size: 10px;
+    }
+
+    .moodEmoji {
+        font-size: 20px;
+    }
+
+    .stepNum {
+        width: 38px;
+        height: 38px;
+        font-size: 15px;
+    }
+
+    .featureTitle {
+        font-size: 19px;
+    }
+
+    .typeCard {
+        padding: 24px 20px;
+    }
+}
+
+/* =========================================================
+   300px
+   ========================================================= */
+
+@media (max-width: 300px) {
+    .section {
+        padding: 48px 12px;
+    }
+
+    .hero {
+        padding: 48px 12px 40px;
+    }
+
+    .ctaSection {
+        padding: 48px 12px;
+    }
+
+    .heroTitle {
+        font-size: 32px;
+    }
+
+    .h2 {
+        font-size: 26px;
+    }
+
+    .ctaTitle {
+        font-size: 28px;
+    }
+
+    .btnDark,
+    .btnLight {
+        padding: 0 16px;
+        font-size: 15px;
+    }
+
+    .sticker {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+
+    .aboutCard {
+        padding: 22px 16px;
+    }
+
+    .aboutIcon {
+        width: 76px;
+        height: 76px;
+    }
+
+    .live {
+        padding: 14px 10px 16px;
+    }
+
+    .moods {
+        gap: 4px;
+    }
+
+    .mood {
+        font-size: 9px;
+        padding: 8px 0;
+    }
+
+    .moodEmoji {
+        font-size: 18px;
+    }
+
+    .liveActions {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .appGrid,
+    .swatches {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .step,
+    .feature {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .typeAa {
+        font-size: 60px;
+    }
+
+    .ctaCard {
+        padding: 28px 16px;
+    }
+}

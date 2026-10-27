@@ -1,0 +1,570 @@
+.wrapper {
+  background: #020000;
+  padding: 72px 60px;
+  color: #fff;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  gap: 24px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding-left: 16px;
+  border-left: 4px solid #DC3545;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navigate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid #dc3545;
+  background: transparent;
+  color: #dc3545;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 32px;
+}
+
+.navigate:hover {
+  background: #dc3545;
+  color: #fff;
+}
+
+.recent {
+  width: max-content;
+  border: none;
+  background-color: #141618;
+  color: #fff;
+  padding: 10px 10px 10px 26px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.recent div {
+  background-color: #000000;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.divider {
+  border: 1px solid #D9D8DD;
+  height: 64px;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  gap: 24px;
+  scroll-snap-type: x proximity;
+  padding-bottom: 8px;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── Card shell ─────────────────────────────────────────── */
+.card {
+  min-width: 480px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 28px;
+  scroll-snap-align: start;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Zodo — teal glow */
+.card:nth-child(1) {
+  border-color: rgba(1, 177, 138, 0.45);
+  box-shadow: 0 0 0 0px rgba(1, 177, 138, 0.15), 0 8px 40px rgba(0, 0, 0, 0.45);
+}
+
+.card:nth-child(1):hover {
+  box-shadow: 0 0 0 4px rgba(1, 177, 138, 0.18), 0 0 40px rgba(1, 177, 138, 0.25), 0 12px 48px rgba(0, 0, 0, 0.5);
+}
+
+/* CleanMaria — silver/white glow */
+.card:nth-child(2) {
+  border-color: rgba(200, 200, 200, 0.25);
+  box-shadow: 0 0 0 0px rgba(200, 200, 200, 0.08), 0 8px 40px rgba(0, 0, 0, 0.55);
+}
+
+.card:nth-child(2):hover {
+  box-shadow: 0 0 0 4px rgba(220, 220, 220, 0.12), 0 0 40px rgba(200, 200, 200, 0.18), 0 12px 48px rgba(0, 0, 0, 0.6);
+}
+
+/* MomsMilk — coral/peach glow */
+.card:nth-child(3) {
+  border-color: rgba(246, 145, 115, 0.5);
+  box-shadow: 0 0 0 0px rgba(246, 145, 115, 0.1), 0 8px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card:nth-child(3):hover {
+  box-shadow: 0 0 0 4px rgba(246, 145, 115, 0.18), 0 0 40px rgba(246, 145, 115, 0.28), 0 12px 48px rgba(0, 0, 0, 0.35);
+}
+
+/* Bambini — purple glow */
+.card:nth-child(4) {
+  border-color: rgba(167, 57, 255, 0.45);
+  box-shadow: 0 0 0 0px rgba(167, 57, 255, 0.12), 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+.card:nth-child(4):hover {
+  box-shadow: 0 0 0 4px rgba(167, 57, 255, 0.2), 0 0 40px rgba(167, 57, 255, 0.3), 0 12px 48px rgba(0, 0, 0, 0.55);
+}
+
+/* ─── Text block ─────────────────────────────────────────── */
+.text {
+  padding: 28px 28px 20px;
+  flex-shrink: 0;
+}
+
+.text a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.text img {
+  margin-bottom: 0;
+}
+
+.logo {
+  display: block;
+  max-width: 100%;
+}
+
+.cardHeading {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 16px 0 10px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.text p {
+  color: inherit;
+  opacity: 0.8;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 13.5px;
+}
+
+/* ─── Media block ───────────────────────────────────────── */
+.media {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 40%, black 40%, transparent 80%);
+  mask-image: radial-gradient(ellipse at 50% 40%, black 40%, transparent 80%);
+}
+
+.mediaItem {
+  position: absolute;
+}
+
+.image {
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+/* ─── Per-project logo sizes ─────────────────────────────── */
+.zodoLogo {
+  width: min(260px, 100%);
+  height: 66px;
+  border-radius: 14px;
+}
+
+.cleanmariaLogo {
+  width: min(200px, 100%);
+  height: 66px;
+}
+
+.bambiniLogo {
+  width: min(180px, 100%);
+  height: 66px;
+}
+
+.momsmilkLogo {
+  width: min(190px, 100%);
+  height: 66px;
+}
+
+/* ─── Per-project media wrapper sizes & positions ───────── */
+.ZodoLaptop {
+  width: 100%;
+  height: 92%;
+  left: 2%;
+  top: 0;
+}
+
+.CleanMariaMockup {
+  width: 96%;
+  height: 92%;
+  left: 2%;
+  top: 0;
+}
+
+.Bambinilaptop {
+  width: 100%;
+  height: 95%;
+  left: 0%;
+  top: 0;
+}
+
+.MomsMilkMockup {
+  width: 94%;
+  height: 94%;
+  left: 3%;
+  top: 0;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+
+/* ── Laptop ── */
+@media (max-width: 1200px) {
+  .wrapper {
+    padding: 64px 48px;
+  }
+
+  .label {
+    font-size: 15px;
+  }
+
+  .controls {
+    gap: 26px;
+  }
+
+  .card {
+    min-width: 440px;
+    height: 620px;
+  }
+
+  .cardHeading {
+    font-size: 24px;
+  }
+
+  .text p {
+    font-size: 13px;
+  }
+}
+
+/* ── Small laptop / large tablet ── */
+@media (max-width: 992px) {
+  .wrapper {
+    padding: 56px 40px;
+  }
+
+  .top {
+    gap: 20px;
+  }
+
+  .label {
+    font-size: 14px;
+    letter-spacing: 1.6px;
+  }
+
+  .recent {
+    font-size: 14px;
+    padding: 8px 8px 8px 22px;
+  }
+
+  .recent div {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+
+  .navigate {
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+  }
+
+  .divider {
+    height: 56px;
+  }
+
+  .card {
+    min-width: 420px;
+    height: 600px;
+  }
+
+  .text {
+    padding: 24px 24px 16px;
+  }
+
+  .text p {
+    font-size: 13px;
+  }
+
+  .cardHeading {
+    font-size: 22px;
+    margin: 14px 0 8px;
+  }
+
+  .zodoLogo,
+  .cleanmariaLogo,
+  .bambiniLogo,
+  .momsmilkLogo {
+    height: 60px;
+  }
+}
+
+/* ── Tablet ── */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 48px 20px 40px;
+  }
+
+  .top {
+    margin-bottom: 24px;
+  }
+
+  .label {
+    font-size: 13px;
+    letter-spacing: 1.4px;
+    padding-left: 12px;
+    border-left-width: 3px;
+  }
+
+  .controls {
+    gap: 20px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .slider {
+    gap: 16px;
+  }
+
+  .recent {
+    font-size: 12.5px;
+    padding: 5px 5px 5px 18px;
+    gap: 12px;
+  }
+
+  .recent div {
+    width: 32px;
+    height: 32px;
+    font-size: 17px;
+  }
+
+  .navigate {
+    width: 48px;
+    height: 48px;
+    font-size: 26px;
+  }
+
+  .divider {
+    height: 50px;
+  }
+
+  .card {
+    min-width: min(84vw, 320px);
+    height: 500px;
+    border-radius: 24px;
+  }
+
+  .text {
+    padding: 20px;
+  }
+
+  .zodoLogo {
+    width: min(220px, 100%);
+    height: 52px;
+  }
+
+  .cleanmariaLogo {
+    width: min(180px, 100%);
+    height: 52px;
+  }
+
+  .bambiniLogo {
+    width: min(200px, 100%);
+    height: 52px;
+  }
+
+  .momsmilkLogo {
+    width: min(160px, 100%);
+    height: 52px;
+  }
+
+  .text p {
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+
+  .cardHeading {
+    font-size: 19px;
+    margin: 12px 0 8px;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 40px 16px 36px;
+  }
+
+  .top {
+    gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .label {
+    font-size: 11.5px;
+    letter-spacing: 1.2px;
+  }
+
+  .controls {
+    gap: 14px;
+    width: 100%;
+  }
+
+  .recent {
+    font-size: 11.5px;
+    padding: 5px 5px 5px 15px;
+    gap: 10px;
+  }
+
+  .recent div {
+    width: 28px;
+    height: 28px;
+    font-size: 15px;
+  }
+
+  .navigate {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .card {
+    min-width: 86vw;
+    max-width: 300px;
+    border-radius: 22px;
+    height: 460px;
+  }
+
+  .text {
+    padding: 16px;
+  }
+
+  .zodoLogo {
+    width: min(180px, 100%);
+    height: 44px;
+  }
+
+  .cleanmariaLogo {
+    width: min(160px, 100%);
+    height: 44px;
+  }
+
+  .bambiniLogo {
+    width: min(170px, 100%);
+    height: 44px;
+  }
+
+  .momsmilkLogo {
+    width: min(140px, 100%);
+    height: 44px;
+  }
+
+  .text p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .cardHeading {
+    font-size: 18px;
+    margin: 10px 0 8px;
+  }
+}
+
+/* ── Very small mobile ── */
+@media (max-width: 360px) {
+  .wrapper {
+    padding: 32px 12px 28px;
+  }
+
+  .label {
+    font-size: 10.5px;
+  }
+
+  .recent {
+    font-size: 10.5px;
+    padding: 4px 4px 4px 12px;
+  }
+
+  .recent div {
+    width: 24px;
+    height: 24px;
+    font-size: 13px;
+  }
+
+  .navigate {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+
+  .card {
+    min-width: 88vw;
+    max-width: 280px;
+    height: 420px;
+  }
+
+  .text {
+    padding: 14px;
+  }
+
+  .cardHeading {
+    font-size: 16px;
+    margin: 8px 0 6px;
+  }
+
+  .text p {
+    font-size: 11.5px;
+    line-height: 1.45;
+  }
+}

@@ -1,0 +1,25 @@
+import './ScrollStack.css';
+
+export const ScrollStackItem = ({ children, itemClassName = '', style = {} }) => (
+  <div 
+    className={`scroll-stack-card ${itemClassName}`.trim()}
+    style={style}
+  >
+    {children}
+  </div>
+);
+
+const ScrollStack = ({
+  children,
+  className = '',
+}) => {
+  return (
+    <div className={`scroll-stack-scroller ${className}`.trim()}>
+      <div className="scroll-stack-inner">
+        {children}
+      </div>
+    </div>
+  );
+};
+
+export default ScrollStack;

@@ -1,0 +1,689 @@
+/* ══════════════════════════════════════════
+   Hero — split layout  (fits exactly in one viewport)
+   ══════════════════════════════════════════ */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  width: 100%;
+  overflow: hidden;
+  background: #080808;
+  color: #fff;
+  font-family: var(--font-dm-sans, "DM Sans", sans-serif);
+}
+
+/* ── Background gradients ── */
+.bgGradientLeft {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 80% at -10% 60%,
+      rgba(220, 53, 69, 0.18) 0%,
+      transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgGradientRight {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 65% 70% at 110% 55%,
+      rgba(180, 20, 35, 0.22) 0%,
+      transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Inner two-column wrapper ── */
+.inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  align-items: center;
+  gap: 0;
+}
+
+/* ══════════════════════════════
+   LEFT — text content
+══════════════════════════════ */
+.content {
+  display: flex;
+  flex-direction: column;
+  max-width: 580px;
+  padding-top: 80px;
+}
+
+.title {
+  font-size: clamp(36px, 4.8vw, 64px);
+  line-height: 1.1;
+  font-weight: 700;
+  font-family: "DM Sans", sans-serif;
+  background: linear-gradient(135deg,
+      #ffffff 0%,
+      #ffffff 40%,
+      rgba(255, 255, 255, 0.55) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  margin: 0 0 20px;
+}
+
+.desc {
+  max-width: 500px;
+  color: rgba(255, 255, 255, 0.58);
+  line-height: 1.7;
+  font-size: clamp(13px, 1.3vw, 15px);
+  font-family: "DM Sans", sans-serif;
+  margin: 0 0 36px;
+}
+
+/* ── CTA buttons ── */
+.ctaWrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 50px;
+  padding: 0 26px;
+  background: #dc3545;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 8px 28px rgba(220, 53, 69, 0.38);
+}
+
+.cta:hover {
+  background: #ff1f1f;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(220, 53, 69, 0.5);
+}
+
+.ctatwo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 50px;
+  padding: 0 26px;
+  background: transparent;
+  border: 1px solid rgba(220, 53, 69, 0.7);
+  border-radius: 50px;
+  color: #dc3545;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 20px rgba(220, 53, 69, 0.15);
+}
+
+.ctatwo:hover {
+  background: #ff1f1f;
+  border-color: #ff1f1f;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(220, 53, 69, 0.5);
+}
+
+.ctaText {
+  white-space: nowrap;
+}
+
+/* ══════════════════════════════
+   RIGHT — visual fills full height
+══════════════════════════════ */
+.visual {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  overflow: visible;
+}
+
+/* ── Laptop image — bleeds to bottom-right edge ── */
+.laptopWrap {
+  position: absolute;
+  bottom: 0;
+  right: -60px;
+  width: 110%;
+  height: 95%;
+  overflow: visible;
+  filter: drop-shadow(0 24px 72px rgba(0, 0, 0, 0.8));
+  z-index: 2;
+}
+
+.laptopImg {
+  object-fit: contain;
+  object-position: right bottom;
+}
+
+/* ── Red glow under laptop ── */
+.laptopGlow {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80%;
+  height: 40%;
+  background: radial-gradient(ellipse 90% 60% at 70% 100%,
+      rgba(200, 30, 45, 0.5),
+      transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(30px);
+}
+
+/* ── Decorative connecting lines ── */
+.lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+
+/* ══════════════════════════════
+   Floating cards
+══════════════════════════════ */
+.card {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  width: 195px;
+  padding: 14px 16px;
+  background: rgba(10, 10, 12, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-left: 2px solid rgba(220, 53, 69, 0.6);
+  border-radius: 14px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  animation: cardFloat 4s ease-in-out infinite;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  border-left-color: #dc3545;
+  box-shadow:
+    0 16px 56px rgba(220, 53, 69, 0.22),
+    0 0 0 1px rgba(220, 53, 69, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform: translateY(-4px) !important;
+}
+
+/* Desktop corner positions */
+.topLeft {
+  animation-delay: 0s;
+  top: 28%;
+  left: 2%;
+}
+
+.topRight {
+  animation-delay: 1s;
+  top: 25%;
+  right: 2%;
+}
+
+.bottomLeft {
+  animation-delay: 2s;
+  bottom: 22%;
+  left: 2%;
+}
+
+.bottomRight {
+  animation-delay: 1.5s;
+  bottom: 16%;
+  right: 2%;
+}
+
+@keyframes cardFloat {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.cardIcon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(220, 53, 69, 0.18);
+  border: 1px solid rgba(220, 53, 69, 0.35);
+  border-radius: 10px;
+  color: #dc3545;
+  box-shadow: 0 0 14px rgba(220, 53, 69, 0.2);
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.card:hover .cardIcon {
+  background: rgba(220, 53, 69, 0.28);
+  box-shadow: 0 0 20px rgba(220, 53, 69, 0.4);
+}
+
+.cardIcon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.cardTitle {
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.35;
+  margin: 0 0 4px;
+  letter-spacing: 0.01em;
+}
+
+.cardDesc {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.42);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ══════════════════════════════
+   RESPONSIVE
+══════════════════════════════ */
+
+/* ── Large tablet ≤1100px — same columns, slightly tighter ── */
+@media (max-width: 1100px) {
+  .inner {
+    padding: 0 40px;
+  }
+
+  .laptopWrap {
+    right: -40px;
+    width: 108%;
+  }
+
+  .card {
+    width: 158px;
+    padding: 11px 12px;
+  }
+
+  .topLeft {
+    top: 12%;
+    left: 0%;
+  }
+
+  .topRight {
+    top: 10%;
+    right: 2%;
+  }
+
+  .bottomLeft {
+    bottom: 20%;
+    left: 0%;
+  }
+
+  .bottomRight {
+    bottom: 16%;
+    right: 2%;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   ≤900px — STACKED LAYOUT
+   Visual splits into two zones:
+     Top zone  → laptop image (fills available height)
+     Bottom zone → 2×2 card grid (fixed 148 px)
+
+   Zone boundary = laptopWrap bottom = 148px
+   Row 1 cards (upper): bottom: 78px  (78 + ~62px card ≈ 140px < 148)
+   Row 2 cards (lower): bottom: 4px
+   Gap between rows: 78 − 4 − ~62 ≈ 12px
+══════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .hero {
+    height: auto;
+    min-height: 100svh;
+    overflow: hidden;
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+    padding: 110px 32px 0;
+
+    text-align: center;
+    justify-items: center;
+    align-items: start;
+    height: auto;
+    gap: 0;
+  }
+
+  .content {
+    max-width: 600px;
+    padding-top: 0;
+  }
+
+  .title {
+    font-size: clamp(30px, 6vw, 50px);
+    margin-bottom: 14px;
+  }
+
+  .desc {
+    font-size: 14px;
+    max-width: 100%;
+    margin-bottom: 28px;
+  }
+
+  .ctaWrap {
+    justify-content: center;
+  }
+
+  .cta,
+  .ctatwo {
+    justify-content: center;
+  }
+
+  /* ── Visual: fixed height, two-zone container ── */
+  .visual {
+    width: 100%;
+    max-width: 580px;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    /* contain float animation */
+    margin-top: 32px;
+  }
+
+  /* Laptop fills the visual container */
+  .laptopWrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 16px 48px rgba(0, 0, 0, 0.8));
+  }
+
+  .laptopImg {
+    object-fit: contain !important;
+    object-position: center bottom;
+  }
+
+  .laptopGlow {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 28%;
+  }
+
+  .lines {
+    display: none;
+  }
+
+  /* ── Floating cards without description ── */
+  .cardDesc {
+    display: none;
+  }
+
+  .cardTitle {
+    font-size: 13px;
+    margin-bottom: 0;
+    line-height: 1.2;
+  }
+
+  .card {
+    width: auto;
+    max-width: 160px;
+    padding: 10px 12px;
+    gap: 8px;
+    border-radius: 12px;
+  }
+
+  .cardIcon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+  }
+
+  .cardIcon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .topLeft {
+    top: 25%;
+    left: 0;
+    bottom: auto;
+    right: auto;
+    animation-delay: 0s;
+  }
+
+  .topRight {
+    top: 18%;
+    right: 0;
+    left: auto;
+    bottom: auto;
+    animation-delay: 0.8s;
+  }
+
+  .bottomLeft {
+    bottom: 12%;
+    left: 0;
+    top: auto;
+    right: auto;
+    animation-delay: 1.6s;
+  }
+
+  .bottomRight {
+    bottom: 6%;
+    right: 0;
+    top: auto;
+    left: auto;
+    animation-delay: 2.4s;
+  }
+}
+
+/* ── Medium mobile ≤640px ── */
+@media (max-width: 640px) {
+  .inner {
+    padding: 100px 24px 0;
+  }
+
+  .title {
+    font-size: clamp(27px, 7.5vw, 42px);
+  }
+
+  .visual {
+    max-width: 100%;
+    margin-top: 28px;
+  }
+
+  .card {
+    max-width: 150px;
+    padding: 8px 10px;
+    border-radius: 10px;
+  }
+
+  .topLeft {
+    top: 22%;
+  }
+
+  .topRight {
+    top: 15%;
+  }
+
+  .bottomLeft {
+    bottom: 10%;
+  }
+
+  .bottomRight {
+    bottom: 5%;
+  }
+}
+
+/* ── Small mobile ≤480px ── */
+@media (max-width: 480px) {
+  .inner {
+    padding: 90px 16px 0;
+  }
+
+  .title {
+    font-size: clamp(25px, 8.5vw, 36px);
+    margin-bottom: 12px;
+  }
+
+  .desc {
+    font-size: 13px;
+    margin-bottom: 22px;
+  }
+
+  /* Stack CTA buttons vertically */
+  .ctaWrap {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .cta,
+  .ctatwo {
+    width: 100%;
+    height: 46px;
+    font-size: 12px;
+    padding: 0 20px;
+    letter-spacing: 0.9px;
+  }
+
+  .visual {
+    margin-top: 24px;
+  }
+
+  .card {
+    max-width: 130px;
+    padding: 8px 10px;
+    gap: 8px;
+    border-radius: 10px;
+  }
+
+  .cardTitle {
+    font-size: 11px;
+  }
+
+  .cardIcon {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+  }
+
+  .cardIcon svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .topLeft {
+    top: 18%;
+  }
+
+  .topRight {
+    top: 12%;
+  }
+  
+  .bottomLeft {
+    bottom: 8%;
+  }
+  
+  .bottomRight {
+    bottom: 4%;
+  }
+}
+
+/* ── Very small ≤380px ── */
+@media (max-width: 380px) {
+  .inner {
+    padding: 84px 14px 0;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .desc {
+    font-size: 12.5px;
+    margin-bottom: 20px;
+  }
+
+  .cta,
+  .ctatwo {
+    height: 44px;
+    font-size: 11.5px;
+  }
+
+  .visual {
+    margin-top: 20px;
+  }
+
+  .card {
+    max-width: 115px;
+    padding: 6px 8px;
+    gap: 6px;
+  }
+
+  .cardTitle {
+    font-size: 10px;
+  }
+
+  .cardIcon {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+  }
+
+  .cardIcon svg {
+    width: 10px;
+    height: 10px;
+  }
+}

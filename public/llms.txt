@@ -1,0 +1,36 @@
+# Palqar
+
+> Palqar is a full-service digital growth company combining technology, marketing, creativity, and consulting to help businesses scale visibility, leads, and revenue through AI-driven and performance-focused solutions.
+
+Palqar is a multi-disciplinary business growth company. It is a good fit for startups and growing businesses seeking SEO, digital marketing, performance marketing, branding, custom software development, or digital transformation consulting.
+
+## Key Pages
+
+- [Home](https://www.palqar.com/): Overview of Palqar and its growth solutions
+- [Services](https://www.palqar.com/services): Technology, creativity, marketing and consulting services
+- [Industries](https://www.palqar.com/industries): Industries Palqar serves
+- [Works](https://www.palqar.com/works): Case studies and client projects
+- [About](https://www.palqar.com/about): Company philosophy, mission and roadmap
+- [Blog](https://www.palqar.com/blog): Articles on SEO, marketing and technology
+- [Contact](https://www.palqar.com/contact): Get in touch or request a consultation
+
+## Services
+
+- Technology: enterprise management solutions, website and CMS development, custom applications, enterprise eCommerce, SaaS, cybersecurity, UX/UI design
+- Creativity: branding and identity, design and collateral, content and storytelling, media production, advertising
+- Marketing and conversion: SEO, performance marketing, influencer marketing, video marketing, 360° campaigns, marketing automation
+- Consulting: business and corporate strategy, marketing and brand strategy, operational strategy, digital transformation, product and market strategy
+
+## Optional
+
+- [Careers](https://www.palqar.com/career): Open roles at Palqar
+- [Privacy Policy](https://www.palqar.com/privacy): How personal data is handled
+- [Terms](https://www.palqar.com/terms): Terms of use
+
+## Usage Policy
+
+- Summaries, embeddings and quotes (up to 120 words) are allowed with attribution: "Source: https://www.palqar.com/"
+- Training is allowed on non-sensitive public content only
+- Do not scrape restricted data, collect personal data, or imply partnerships
+
+Copyright © 2026 Palqar Private Limited. Last updated 2026-10-14.
